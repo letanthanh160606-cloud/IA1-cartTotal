@@ -24,7 +24,8 @@ try {
     'src/cart.js', 'test/cart.test.js', 'scripts/check-format.js',
     'scripts/package.ps1', '.github/workflows/ci.yml', '.gitignore',
     'package.json', 'README.md', 'CLAUDE.md', 'brief.md',
-    'AI-LOG.md', 'SELF_ASSESSMENT_REPORT.md', 'PROJECT_SUMMARY.md'
+    'AI-LOG.md', 'SELF_ASSESSMENT_REPORT.md', 'PROJECT_SUMMARY.md',
+    'evidence/ci-success.png'
   )
   foreach ($relativePath in $files) {
     if (-not (Test-Path -LiteralPath (Join-Path $projectRoot $relativePath) -PathType Leaf)) {

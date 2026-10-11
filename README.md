@@ -47,7 +47,7 @@ npm run check
 
 The gate runs a basic whitespace check, then the Node test runner. The format check rejects tabs, trailing whitespace and missing final newlines in JavaScript/workflow files and package.json. It is not a full formatter.
 
-GitHub Actions is configured in .github/workflows/ci.yml for push and pull_request. A successful local gate does not prove that CI has run on GitHub.
+GitHub Actions is configured in .github/workflows/ci.yml for push and pull_request. [Quality checks #1](https://github.com/letanthanh160606-cloud/IA1-cartTotal/actions/runs/38140175587) succeeded for commit a5fe728, as shown in the [student-provided screenshot](evidence/ci-success.png). Later commits need their own CI verification.
 
 ## Documentation
 
@@ -61,10 +61,10 @@ GitHub Actions is configured in .github/workflows/ci.yml for push and pull_reque
 
 ~~~powershell
 ./scripts/package.ps1
-# After filling student details and reviewing the score:
-./scripts/package.ps1 -StudentID 'YOUR_STUDENT_ID'
+# Student ID is filled; review the proposed score before submission:
+./scripts/package.ps1 -StudentID '24127540'
 ~~~
 
-The script runs the gate and reads the claimed score from the report. Without a student ID, it creates a clearly marked draft in submission/. With an ID, the name follows <StudentID>_<total>.zip. Existing archives are not overwritten. The archive includes .github and excludes .git, .env, node_modules and previous ZIPs. Check npm run check again from an extracted copy before submitting.
+The script runs the gate and reads the claimed score from the report. Without a student ID, it creates a clearly marked draft in submission/. With an ID, the name follows <StudentID>_<total>.zip. Existing archives are not overwritten. The archive includes .github and the CI screenshot and excludes .git, .env, node_modules and previous ZIPs. Check npm run check again from an extracted copy before submitting.
 
-Student ID and name have been filled in from the student’s supplied details; the GitHub URL remains blank. Submission is a ZIP according to the original requirements above; successful CI on push supports the highest harness rubric band. The configured origin still points to the course starter until the student chooses a personal repository.
+Student: 24127540 — Lê Tấn Thành. Repository: [IA1-cartTotal](https://github.com/letanthanh160606-cloud/IA1-cartTotal). Submission is a ZIP according to the original requirements above. Successful CI on push is now evidenced; the proposed self-score is 99/100, making the current archive name 24127540_99.zip. Review the score before submitting. origin points to the personal repository.

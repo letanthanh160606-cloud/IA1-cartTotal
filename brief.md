@@ -15,7 +15,7 @@ Hoàn thiện `cartTotal(items, options)` đúng README.md bằng JavaScript thu
 - `src/cart.js`: chỉ sửa nếu phát hiện sai đặc tả hoặc cần chỉnh chú thích.
 - `test/cart.test.js`: bổ sung test hành vi; giữ các kết quả đúng theo README.md.
 - `scripts/check-format.js`, `package.json`, `.github/workflows/ci.yml`: hoàn thiện quality gate và CI khi cần.
-- `scripts/package.ps1`, `.gitignore`: chuẩn bị ZIP và loại trừ file sinh ra.
+- `scripts/package.ps1`, `.gitignore`, `evidence/ci-success.png`: chuẩn bị ZIP, lưu ảnh CI do sinh viên cung cấp và loại trừ file sinh ra.
 - `CLAUDE.md`, `brief.md`, `AI-LOG.md`, `SELF_ASSESSMENT_REPORT.md`, `PROJECT_SUMMARY.md`: hoàn thiện tài liệu dựa trên bằng chứng thực tế.
 - `README.md`: được bổ sung hướng dẫn chạy, cấu trúc và đóng gói; giữ nguyên đặc tả và yêu cầu nộp bài gốc.
 
@@ -55,6 +55,6 @@ Giữ nguyên `export function cartTotal(items, options)`.
 
 ## Tài liệu và giới hạn
 
-Tại thời điểm viết brief, sinh viên yêu cầu để trống MSSV, họ tên và URL GitHub. Cập nhật ngày 2026-10-11: sinh viên cung cấp MSSV 24127540 và họ tên Lê Tấn Thành; đã điền vào báo cáo và tổng kết, URL vẫn trống. Khi chưa có MSSV, ZIP mang tên bản nháp; trước khi nộp phải đổi thành `<StudentID>_<total>.zip`, với total bằng điểm trong báo cáo. Điểm tự chấm là đề xuất để sinh viên đọc và chịu trách nhiệm, không phải điểm đã được giảng viên xác nhận.
+Tại thời điểm viết brief, sinh viên yêu cầu để trống MSSV, họ tên và URL GitHub. Cập nhật ngày 2026-10-11: sinh viên cung cấp MSSV 24127540 và họ tên Lê Tấn Thành; đã điền vào báo cáo và tổng kết. Cập nhật tiếp sau khi sinh viên push: repository https://github.com/letanthanh160606-cloud/IA1-cartTotal; CI Success được ghi bằng URL run và ảnh evidence/ci-success.png. Khi chưa có MSSV, ZIP mang tên bản nháp; trước khi nộp phải đổi thành `<StudentID>_<total>.zip`, với total bằng điểm trong báo cáo. Điểm tự chấm là đề xuất để sinh viên đọc và chịu trách nhiệm, không phải điểm đã được giảng viên xác nhận.
 
 Không bịa lịch sử RED, commit, CI, phần viết tay hoặc đề xuất sinh viên đã từ chối. Ghi rõ phần lịch sử do sinh viên thuật lại và phần được công cụ xác minh.

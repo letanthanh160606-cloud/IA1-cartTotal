@@ -55,3 +55,19 @@ Rejected: Không có đề xuất mới nào bị sinh viên từ chối trong b
 By hand: Sinh viên tự cung cấp MSSV và họ tên; cập nhật file và đóng gói do Codex thực hiện.
 
 Điểm 95 chưa được sinh viên xác nhận trong tin nhắn cung cấp thông tin. Không tự ghi đã duyệt báo cáo, đã hiểu hết code hoặc đã nộp lên Classroom. CI trên GitHub chưa được xác minh.
+
+## 2026-10-11 — Hoàn thiện bằng chứng CI và hồ sơ nộp bài
+Tool: ChatGPT / Codex
+Asked for: Điền toàn bộ phần còn thiếu sau khi sinh viên gửi ảnh chi tiết CI Success.
+Kept: Giữ code cartTotal, 14 test và workflow đã chạy thành công; giữ lịch sử các entry trước đúng với trạng thái tại thời điểm đó.
+Changed: Codex điền URL repository và run CI, cập nhật README.md, CLAUDE.md, brief.md, SELF_ASSESSMENT_REPORT.md và PROJECT_SUMMARY.md; lưu ảnh gốc vào evidence/ci-success.png; thêm ảnh vào danh sách đóng gói. Tự chấm đề xuất Harness từ 16 lên 20, tổng từ 95 lên 99; AI log vẫn 14/15 vì thiếu output RED gốc và ngày thực hiện chính xác. ZIP mới dùng tên 24127540_99.zip, tổng điểm khớp báo cáo.
+Rejected: Chưa có đề xuất mới bị sinh viên từ chối. Codex giữ workflow v4 đã Success và ghi hướng nâng cấp trong tổng kết, không tạo thay đổi workflow chưa được xác minh gần thời điểm nộp.
+By hand: Sinh viên đã tự đổi remote sang repository cá nhân, chạy git add/diff, tạo commit a5fe728 và push, mở GitHub Actions và gửi ảnh Success. Điều này có bằng chứng từ output sinh viên gửi, commit Git local và ảnh CI. Các cập nhật file tài liệu, lưu ảnh và đóng gói trong bước này do Codex làm.
+
+Bằng chứng: repository https://github.com/letanthanh160606-cloud/IA1-cartTotal; run https://github.com/letanthanh160606-cloud/IA1-cartTotal/actions/runs/38140175587; full commit a5fe728b3dbcbe3c4270fe6ca46f20e14f067d65. Ảnh thể hiện event push, main, status Success và job check đạt. Web tool không mở được trang run nên không ghi là đã trực tiếp đọc log CI. Các nhận định về CI dựa trên ảnh sinh viên cung cấp; ảnh được lưu vào repository để đối chiếu offline.
+
+Hai thông báo trong run không làm CI thất bại: warning runtime của Actions v4 và notice thay đổi ubuntu-latest. Đã xem action.yml chính thức của checkout/setup-node v5 để ghi hướng nâng cấp runtime, nhưng không đổi workflow trong phiên này. Chưa tự commit/push các cập nhật tài liệu và chưa nộp Classroom. Điểm 99 vẫn cần sinh viên xác nhận, không phải điểm đã được giảng viên chấm. Các entry cũ nói URL trống hoặc CI chưa được xác minh là lịch sử trước bước push, được giữ nguyên.
+
+Xác minh cục bộ sau cập nhật: git diff xác nhận src/cart.js, test/cart.test.js, package.json, scripts/check-format.js và workflow không đổi so với commit a5fe728. npm run check đạt: format 5 file, tests 14/pass 14/fail 0. git diff --check đạt; kiểm tra báo cáo có 5 hàng rubric, tổng 99 và các link file bằng chứng tồn tại. Script đóng gói tạo ZIP từ danh sách 14 file gồm ảnh CI.
+
+Kiểm chứng ZIP 24127540_99.zip: đủ 14 file có workflow và ảnh CI, không có nội dung bị loại trừ. Đã giải nén sang thư mục tạm riêng; thông tin cá nhân, tổng 99 và URL run đúng. npm run check từ bản giải nén đạt: format 5 file, 14 test đạt, 0 fail. Ghi kết quả xác minh vào log/tổng kết và đồng bộ hai file này vào ZIP.

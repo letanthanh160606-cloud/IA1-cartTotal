@@ -6,7 +6,11 @@ MSSV: 24127540
 
 Họ tên: Lê Tấn Thành
 
-URL repository GitHub:
+URL repository GitHub: [IA1-cartTotal](https://github.com/letanthanh160606-cloud/IA1-cartTotal)
+
+Bằng chứng CI: [Quality checks #1 — Success](https://github.com/letanthanh160606-cloud/IA1-cartTotal/actions/runs/38140175587)
+
+Commit code đã chạy CI: [a5fe728](https://github.com/letanthanh160606-cloud/IA1-cartTotal/commit/a5fe728b3dbcbe3c4270fe6ca46f20e14f067d65)
 
 ## Yêu cầu bài tập
 
@@ -33,15 +37,15 @@ Thứ tự thực tế, theo sinh viên thuật lại và công việc trong phi
 | npm test xanh | Đạt: 14 test, 14 pass, 0 fail | npm run check ngày 2026-10-10 |
 | Rules file có stack, commands, Never | Đã có, cụ thể cho project | CLAUDE.md |
 | Gate gồm test và format/lint | Đạt cục bộ: format check + node --test | package.json; scripts/check-format.js |
-| CI chạy trên push | Đã cấu hình; chưa có lần chạy trên GitHub được xác minh | .github/workflows/ci.yml |
+| CI chạy trên push | Đạt: Quality checks #1, push/main, commit a5fe728, Success theo ảnh sinh viên cung cấp | [CI run](https://github.com/letanthanh160606-cloud/IA1-cartTotal/actions/runs/38140175587); .github/workflows/ci.yml |
 | Brief rõ phạm vi và đặc tả | Đã có, viết cho vòng hoàn thiện sau implementation | brief.md |
 | AI log trung thực | Đã ghi các buổi Codex và phần lịch sử sinh viên cung cấp; không bịa phần tự làm hay từ chối | AI-LOG.md |
-| Tự đánh giá đủ năm tiêu chí | Có; điểm đề xuất 95/100, còn cần sinh viên xác nhận | SELF_ASSESSMENT_REPORT.md |
-| ZIP đúng nội dung | Bản nháp trước đã được giải nén và kiểm tra đạt. Sau khi điền thông tin, đóng gói thành 24127540_95.zip gồm 13 file; điểm 95 còn cần sinh viên xác nhận | scripts/package.ps1; submission/ |
+| Tự đánh giá đủ năm tiêu chí | Có; cập nhật điểm đề xuất 99/100 sau khi có bằng chứng CI | SELF_ASSESSMENT_REPORT.md |
+| ZIP đúng nội dung | Đã tạo và giải nén kiểm chứng 24127540_99.zip: 14 file (có ảnh CI), format đạt, 14 test đạt; không chứa .git/.env/node_modules/ZIP cũ | scripts/package.ps1; submission/ |
 
 ## Kết quả kiểm tra thực tế
 
-- Môi trường cục bộ: Node.js v24.18.0, npm 11.16.0. CI cấu hình Node.js 22; chưa xác minh chạy ở môi trường CI.
+- Môi trường cục bộ: Node.js v24.18.0, npm 11.16.0. CI cấu hình Node.js 22; đã có workflow Success cho commit a5fe728 trên GitHub. Output cục bộ là bằng chứng riêng; không suy đoán chi tiết phiên bản Node/npm từ ảnh CI.
 - Lần kiểm tra ban đầu của phiên: 6 test đạt.
 - Sau bổ sung test: npm run check đạt; format kiểm tra 5 file, tests 14 / pass 14 / fail 0.
 - Đã kiểm tra formatIssues phát hiện tab, khoảng trắng cuối dòng và thiếu newline, đồng thời chấp nhận nội dung hợp lệ.
@@ -63,6 +67,7 @@ Thứ tự thực tế, theo sinh viên thuật lại và công việc trong phi
 | SELF_ASSESSMENT_REPORT.md | Điểm đề xuất và bằng chứng rubric |
 | scripts/package.ps1 | Tạo ZIP trên Windows, lấy tổng điểm từ báo cáo |
 | PROJECT_SUMMARY.md | File tổng kết bạn đang đọc |
+| evidence/ci-success.png | Ảnh CI Success do sinh viên cung cấp |
 
 Chạy từ thư mục gốc:
 
@@ -84,17 +89,17 @@ Không cần npm install. Trong npm run check, && chỉ chạy test nếu format
 ./scripts/package.ps1 -StudentID 'YOUR_STUDENT_ID'
 ~~~
 
-Script đọc total trong báo cáo nên tên ZIP tự khớp điểm. ZIP chỉ chứa danh sách file cần nộp, có .github, không có .git, .env, node_modules hoặc ZIP cũ. Nếu ZIP cùng tên đã tồn tại, script từ chối ghi đè; chuyển bản cũ sang tên lưu trữ khác trước khi tạo lại.
+Script đọc total trong báo cáo nên tên ZIP tự khớp điểm. ZIP chỉ chứa danh sách file cần nộp, có .github và ảnh bằng chứng CI, không có .git, .env, node_modules hoặc ZIP cũ. Nếu ZIP cùng tên đã tồn tại, script từ chối ghi đè; chuyển bản cũ sang tên lưu trữ khác trước khi tạo lại.
 
 ## Những gì còn cần bạn xác nhận trước khi nộp
 
-1. Kiểm tra MSSV 24127540, họ tên Lê Tấn Thành; đọc và xác nhận điểm tự chấm. Tổng hiện tại 95 là đề xuất: Behaviour 30, Tests 20, Harness 16, Brief 15, AI log 14.
+1. Kiểm tra MSSV 24127540, họ tên Lê Tấn Thành; đọc và xác nhận điểm tự chấm. Tổng hiện tại 99 là đề xuất: Behaviour 30, Tests 20, Harness 20, Brief 15, AI log 14.
 2. Đọc AI log; sửa các mục Kept/Changed/Rejected/By hand theo công việc thực tế của bạn sau khi review. Không tự ghi có phần làm bằng tay nếu không có.
-3. Nếu muốn hướng tới mức tối đa của Harness, dùng repository cá nhân và xác nhận CI đạt trên tab Actions. Hiện origin trỏ repository mẫu của thầy; chưa đổi remote hay push.
+3. Repository cá nhân và CI đã có bằng chứng thành công. Commit/push phần cập nhật tài liệu hiện tại và kiểm tra lần CI mới; không gán kết quả của commit cũ cho commit mới.
 4. Sau thay đổi tài liệu/điểm, tạo lại ZIP. Tên ZIP hiện dùng MSSV 24127540; nếu đổi điểm cần tạo lại ZIP theo tổng mới.
 5. Kiểm tra gate từ bản giải nén và đảm bảo hiểu code trước vấn đáp.
 
-Điểm tối đa chưa được khẳng định: thiếu bằng chứng CI, chưa có xác nhận sinh viên hiểu và duyệt tài liệu; điểm cuối do giảng viên quyết định theo rubric chính thức.
+Điểm tối đa chưa được khẳng định: hồ sơ lịch sử ban đầu còn giới hạn, sinh viên cần xác nhận hiểu và duyệt tài liệu; điểm cuối do giảng viên quyết định theo rubric chính thức.
 
 ## Chuẩn bị vấn đáp: giải thích code bằng lời của bạn
 
@@ -139,4 +144,32 @@ Giới hạn audit: test hiện tại bao phủ đặc tả đã nêu; không ch
 
 ## Cập nhật thông tin nộp bài — 2026-10-11
 
-Sinh viên cung cấp MSSV 24127540 và họ tên Lê Tấn Thành. Đã điền vào báo cáo và tổng kết; URL GitHub vẫn trống. ZIP chuẩn bị nộp mang tên 24127540_95.zip theo điểm đề xuất hiện có. Việc cung cấp thông tin không được coi là xác nhận điểm 95 hoặc xác nhận sinh viên đã hiểu mọi dòng code.
+Sinh viên cung cấp MSSV 24127540 và họ tên Lê Tấn Thành. Tại bước này đã điền vào báo cáo và tổng kết, URL GitHub còn trống. ZIP lúc đó mang tên 24127540_95.zip theo điểm đề xuất khi chưa có CI; bản cập nhật hiện tại dùng 99 điểm. Việc cung cấp thông tin không được coi là xác nhận điểm 95 hoặc xác nhận sinh viên đã hiểu mọi dòng code.
+
+## Cập nhật bằng chứng GitHub và CI — 2026-10-11
+
+- Repository: [IA1-cartTotal](https://github.com/letanthanh160606-cloud/IA1-cartTotal). origin hiện trỏ repository cá nhân này, không còn trỏ starter của thầy.
+- Sinh viên đã tự commit/push: [a5fe728 — Complete IA1 cartTotal with tests and harness](https://github.com/letanthanh160606-cloud/IA1-cartTotal/commit/a5fe728b3dbcbe3c4270fe6ca46f20e14f067d65). Commit tồn tại trong Git local và ảnh CI.
+- Ảnh sinh viên cung cấp xác nhận [Quality checks #1](https://github.com/letanthanh160606-cloud/IA1-cartTotal/actions/runs/38140175587) được kích hoạt bởi push trên main, status Success, job check đạt, tổng thời gian hiển thị 9 giây. Ảnh gốc được lưu trong [evidence/ci-success.png](evidence/ci-success.png) và đưa vào ZIP. URL của lần chạy được đọc trực tiếp từ thanh địa chỉ trong ảnh. Công cụ web không mở được trang run, nên không ghi là đã đọc log CI trực tiếp.
+- Điểm đề xuất Harness tăng từ 16 lên 20 sau bằng chứng này, tổng từ 95 lên 99. AI log vẫn 14 vì lịch sử ban đầu chưa được lưu đầy đủ; không suy đoán điểm cuối của giảng viên.
+- ZIP cần dùng cho tài liệu hiện tại: **24127540_99.zip**. Giữ các ZIP 95 điểm như bản cũ, không dùng để nộp tài liệu cập nhật.
+- Các thay đổi lần này là tài liệu và đóng gói ảnh CI; code tính tiền, 14 test và workflow đã Success giữ nguyên. Chưa tạo commit/push cho phần cập nhật tài liệu; sinh viên thực hiện theo các lệnh bên dưới, rồi kiểm tra lần CI tương ứng.
+
+### Hai thông báo trong lần CI thành công
+
+1. Warning: actions/checkout@v4 và actions/setup-node@v4 nhắm runtime Node 20, đang bị GitHub chuyển sang Node 24. Đây là runtime của các action; node-version: '22' vẫn là Node dùng chạy project. Bản v5 của hai action dùng runtime Node 24 theo [checkout action.yml](https://raw.githubusercontent.com/actions/checkout/v5/action.yml) và [setup-node action.yml](https://raw.githubusercontent.com/actions/setup-node/v5/action.yml). Có thể nâng cấp khi bảo trì, nhưng phải kiểm tra lại CI; không tuyên bố đã nâng cấp trong lần này.
+2. Notice: ubuntu-latest sẽ đổi ảnh hệ điều hành. Khi cần cố định môi trường, có thể dùng ubuntu-24.04 theo [runner image chính thức](https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md). Đây là thông báo thay đổi môi trường tương lai, không phải test thất bại.
+
+### Đồng bộ tài liệu trước khi nộp
+
+~~~powershell
+npm run check
+git add README.md CLAUDE.md brief.md AI-LOG.md SELF_ASSESSMENT_REPORT.md PROJECT_SUMMARY.md scripts/package.ps1 evidence/ci-success.png
+git --no-pager diff --cached
+git commit -m "Update submission documents with CI evidence"
+git push origin main
+~~~
+
+Sau push, vào Actions kiểm tra lần chạy của commit mới. Khi giữ tổng 99, nộp 24127540_99.zip trên Classroom bằng tài khoản sinh viên thầy yêu cầu. Chưa có bằng chứng xác nhận thầy chấp nhận email @clc.fitus.edu.vn; không tự ghi đã giải quyết việc tài khoản hoặc đã nộp bài.
+
+Kiểm chứng bản đóng gói cập nhật: 24127540_99.zip có đủ 14 file, gồm workflow và ảnh CI; thông tin 24127540 — Lê Tấn Thành, tổng 99 và URL run khớp báo cáo. Gate từ bản giải nén đạt: format 5 file, tests 14/pass 14/fail 0.

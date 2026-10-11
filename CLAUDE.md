@@ -20,6 +20,7 @@ Hoàn thành bài IA#1 của CSC13008 và giúp sinh viên hiểu, giải thích
 - brief.md, AI-LOG.md, SELF_ASSESSMENT_REPORT.md: brief, log và báo cáo theo yêu cầu bài tập.
 - PROJECT_SUMMARY.md: đối chiếu yêu cầu, kết quả và hướng dẫn vấn đáp.
 - scripts/package.ps1: đóng gói trên Windows; submission/ chứa ZIP được Git bỏ qua.
+- evidence/ci-success.png: ảnh bằng chứng CI thành công do sinh viên cung cấp.
 
 Giới hạn sửa file theo brief của từng nhiệm vụ. Giải thích trước khi sửa code hoặc cấu hình. Không thay đổi README.md để làm đặc tả khớp với code sai.
 
@@ -85,3 +86,9 @@ CI được cấu hình trong .github/workflows/ci.yml để chạy npm run chec
 - Never bịa commit, test, bằng chứng, gợi ý đã từ chối hoặc phần làm bằng tay.
 - Never mô tả lịch sử làm bài như thể đã theo đúng thứ tự yêu cầu nếu thực tế khác. Theo thông tin sinh viên cung cấp, test RED ban đầu, implementation và test bổ sung đã được làm trước khi thiết lập harness và brief.
 - Never đưa API key, dữ liệu người dùng thật hoặc bài làm của bạn học vào prompt hay repository.
+
+## Repository và bằng chứng CI hiện tại
+
+Repository cá nhân: https://github.com/letanthanh160606-cloud/IA1-cartTotal
+
+Quality checks #1: https://github.com/letanthanh160606-cloud/IA1-cartTotal/actions/runs/38140175587 — ảnh sinh viên xác nhận Success cho commit a5fe728. Không dùng kết quả này để tuyên bố các commit sau cũng đã chạy đạt; kiểm tra lần chạy tương ứng sau khi push. Không thay đổi lịch sử trong AI-LOG.md; ghi thêm entry khi có bằng chứng mới.
